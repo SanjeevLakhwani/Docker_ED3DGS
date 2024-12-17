@@ -1,0 +1,13 @@
+services:
+  pytorch_app:
+    build:
+      context: .
+      dockerfile: DockerFile
+    volumes:
+      - ./src:/app
+      - ./data:/data
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+    runtime: nvidia
+    stdin_open: true
+    tty: true

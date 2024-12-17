@@ -1,0 +1,8 @@
+*_old
+output
+data
+
+.idea/
+src/submodules/
+src/SIBR_viewers/
+src/submodules

@@ -1,0 +1,13 @@
+FROM pytorch/pytorch:2.1.2-cuda11.8-cudnn8-devel
+RUN apt-get update && apt-get install -y libglm-dev
+
+
+# Set the working directory in the container
+WORKDIR /app
+
+
+COPY src /app
+COPY data /app/data
+RUN pip install -r /app/requirements.txt
+RUN pip install /app/submodules/diff-gaussian-rasterization /app/submodules/simple-knn
+CMD ["/bin/bash"]
